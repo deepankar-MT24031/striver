@@ -29,36 +29,30 @@ int start_node=1;
 visited[start_node]=1;
 queue.emplace(start_node);
 
+
 while(!queue.empty()){
 
     int curr_node = queue.front();
+    cout<<curr_node<<", ";
+    
+    int curr_node_len = adj[curr_node].size();
 
-    int curr_node_len = sizeof(adj[curr_node])/sizeof(adj[curr_node][0]);
+    //cout<<"visiting"<<queue.front()<<"of size "<<curr_node_len<<endl;
 
 for(int i=0;i<curr_node_len;i++) {
 
-    if (visited[adj[curr_node][i]] == 1){continue;};
+    if (visited[adj[curr_node][i]] == 1){//cout<<"node "<<adj[curr_node][i]<<"visited"<<endl;
+    continue;};
 
     visited[adj[curr_node][i]] = 1; //new node discovered set to visited
     queue.emplace(adj[curr_node][i]); // add to queue
-    cout<<adj[curr_node][i]<<endl; //print node
+    //cout<<adj[curr_node][i]<<endl; //print node
     
 };
 queue.pop();
 
 
-}
-
-/*
-for(int i=0;i<n;i++){
-
-    int u,v;
-    cin>>u>>v;
-    adj[u].push_back(v);
-    adj[v].push_back(u);
-
-}
-*/
+};
 
 
 
