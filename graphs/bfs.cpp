@@ -1,12 +1,12 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<string>
 using namespace std;
 
 int main(){
 
 int n=9;
-
 
 vector<int> adj[n+1];
 int visited[n+1];
@@ -24,12 +24,30 @@ adj[7]={6,8};
 adj[9]={6};
 adj[8]={5,7};
 
+int start_node=1;
+
+visited[start_node]=1;
+queue.emplace(start_node);
+
+while(!queue.empty()){
+
+    int curr_node = queue.front();
+
+    int curr_node_len = sizeof(adj[curr_node])/sizeof(adj[curr_node][0]);
+
+for(int i=0;i<curr_node_len;i++) {
+
+    if (visited[i] == 1){}
+
+    visited[i] = 1; //new node discovered set to visited
+    queue.emplace(i); // add to queue
+    cout<<i<<endl; //print node
+    
+};
+queue.pop();
 
 
-
-
-
-adj
+}
 
 /*
 for(int i=0;i<n;i++){
