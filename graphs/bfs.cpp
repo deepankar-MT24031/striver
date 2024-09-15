@@ -37,11 +37,11 @@ while(!queue.empty()){
 
 for(int i=0;i<curr_node_len;i++) {
 
-    if (visited[i] == 1){}
+    if (visited[adj[curr_node][i]] == 1){continue;};
 
-    visited[i] = 1; //new node discovered set to visited
-    queue.emplace(i); // add to queue
-    cout<<i<<endl; //print node
+    visited[adj[curr_node][i]] = 1; //new node discovered set to visited
+    queue.emplace(adj[curr_node][i]); // add to queue
+    cout<<adj[curr_node][i]<<endl; //print node
     
 };
 queue.pop();
