@@ -5,7 +5,7 @@ int main(){
 
     cout<<"lol";
     cout<<"omg";
-    cout<<"3rd";
+    cout<<"3r";
 
     return 0;
 }
